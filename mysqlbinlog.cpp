@@ -5,15 +5,12 @@
 using namespace std;
 
 int bytes2dec(const char *bytes, const int BYTE_SIZE) {
-    char* _bytes = new char[BYTE_SIZE];
-    copy(bytes, bytes + BYTE_SIZE, _bytes);
     int decsum = 0;
     for(int i = 0; i < BYTE_SIZE; ++i) {
-        int d = (int)(unsigned char)(_bytes[i]);
+        int d = (int)(unsigned char)(bytes[i]);
         for(int j = 0; j < i; ++j) d *= 256;
         decsum += d;
     }
-    delete[] _bytes;
     return decsum;
 }
 
@@ -121,7 +118,7 @@ bool MySQLBinlog::checkBinlog() {
 
 std::string MySQLBinlog::getServerVersion() const {
     stringstream ss;
-    ss << m_server_version_bytes;
+    ss << m_server_version_bytes << flush;
     return ss.str();
 }
 
@@ -262,25 +259,25 @@ bool Event::parseQueryEventData() {
 
 string Event::getDBName() const {
     stringstream ss;
-    ss << m_dbname;
+    ss << m_dbname << flush;
     return ss.str();
 }
 
 string Event::getSQLStatement() const {
     stringstream ss;
-    ss << m_sql_statement;
+    ss << m_sql_statement << flush;
     return ss.str();
 }
 
 string Event::getNextBinlogName() const {
     stringstream ss;
-    ss << m_next_binlog_name;
+    ss << m_next_binlog_name << flush;
     return ss.str();
 }
 
 string Event::getTableName() const {
     stringstream ss;
-    ss << m_table_name;
+    ss << m_table_name << flush;
     return ss.str();
 }
 
@@ -561,7 +558,7 @@ bool Event::__parseRowsEventData(const TableMap& table_map, const MetaMap& meta_
             else if(ctype == MYSQL_TYPE_DOUBLE) row[i] = "double";
             else if(ctype == MYSQL_TYPE_NULL) row[i] = "null";
             else if(ctype == MYSQL_TYPE_TIMESTAMP) row[i] = "timestamp";
-            else if(ctype == MYSQL_TYPE_LONGLONG) row[i] = "longlong";
+            else if(ctype == MYSQL_TYPE_LONGLONG) row[i] = int2str(bytes2dec(m_data + pos, csize));
             else if(ctype == MYSQL_TYPE_INT24) row[i] = int2str(bytes2dec(m_data + pos, csize));
             else if(ctype == MYSQL_TYPE_DATE) row[i] = "date";
             else if(ctype == MYSQL_TYPE_TIME) row[i] = "time";

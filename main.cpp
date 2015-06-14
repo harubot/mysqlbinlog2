@@ -22,8 +22,8 @@ void printTimestamp(int time) {
 }
 
 void printQueryEvent(const Event* event) {
-    string dbname = event->getDBName();
-    string sql_statement = event->getSQLStatement();
+    const string dbname = event->getDBName();
+    const string sql_statement = event->getSQLStatement();
     cout << '\t' << "QUERY_EVENT" << '\t'
          << dbname << '\t'
          << sql_statement << endl;
@@ -43,10 +43,10 @@ void printXidEvent(const Event* event) {
 }
 
 void storePrintTableMapEvent(const Event* event, TableMap& table_map, MetaMap& meta_map) {
-    int table_id = event->getTableId();
-    int num_of_columns = event->getNumOfColumns();
-    string dbname = event->getDBName();
-    string table_name = event->getTableName();
+    const int table_id = event->getTableId();
+    const int num_of_columns = event->getNumOfColumns();
+    const string dbname = event->getDBName();
+    const string table_name = event->getTableName();
     cout << '\t' << "TABLE_MAP_EVENT" << '\t'
          << dbname << '\t'
          << table_name << '\t'
