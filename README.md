@@ -9,7 +9,7 @@ Installation (on Linux environment)
 ==================
 
 	$ sudo yum install git gcc-c++
-	$ git clone https://github.com/qooskydev/mysqlbinlog2.git
+	$ git clone https://github.com/qoosky/mysqlbinlog2.git
 	$ cd mysqlbinlog2
 	$ tar zxvf poco-1.6.0.tar.gz
 	$ cd poco-1.6.0
@@ -73,10 +73,10 @@ Now, you can see the human readable MySQL log.
 
 References
 ==================
-- https://www.qoosky.net/references/252/
-- https://www.qoosky.net/references/238/
-- https://www.qoosky.net/references/237/
-- https://www.qoosky.net/references/226/
-- https://www.qoosky.net/references/196/
-- https://www.qoosky.net/references/162/
-- https://www.qoosky.net/references/8/
+- https://www.qoosky.net/techs/252/
+- https://www.qoosky.net/techs/238/
+- https://www.qoosky.net/techs/237/
+- https://www.qoosky.net/techs/226/
+- https://www.qoosky.net/techs/196/
+- https://www.qoosky.net/techs/162/
+- https://www.qoosky.net/techs/8/
