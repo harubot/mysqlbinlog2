@@ -73,10 +73,10 @@ Now, you can see the human readable MySQL log.
 
 References
 ==================
-- https://www.qoosky.net/techs/252/
-- https://www.qoosky.net/techs/238/
-- https://www.qoosky.net/techs/237/
-- https://www.qoosky.net/techs/226/
-- https://www.qoosky.net/techs/196/
-- https://www.qoosky.net/techs/162/
-- https://www.qoosky.net/techs/8/
+- https://www.qoosky.net/techs/2249ec5512
+- https://www.qoosky.net/techs/8e92d3d34a
+- https://www.qoosky.net/techs/5a407cd8cb
+- https://www.qoosky.net/techs/b8271736f9
+- https://www.qoosky.net/techs/b69c78a44d
+- https://www.qoosky.net/techs/736a22850b
+- https://www.qoosky.net/techs/b32397ba91
